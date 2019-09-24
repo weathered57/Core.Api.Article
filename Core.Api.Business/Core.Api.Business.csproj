@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core.Api.DataAccess\Core.Api.DataAccess.csproj" />
+    <ProjectReference Include="..\Core.Api.Entities\Core.Api.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
