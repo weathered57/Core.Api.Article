@@ -10,7 +10,7 @@ namespace Core.Api.DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=fornax.pennaict.com;Initial Catalog=deneme;User Id=sa;password=*-P2e0+N1n4!@-*;Trusted_Connection=true");
+            optionsBuilder.UseSqlServer(@"Server=77.245.159.15\MSSQLSERVER2012;Initial Catalog=anilcan_;User Id=anilcan;password=05436467210Tr10;Trusted_Connection=true");
         }
 
         public DbSet<Article> Articles { get; set; }
