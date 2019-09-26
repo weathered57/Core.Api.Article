@@ -14,5 +14,6 @@ namespace Core.Api.DataAccess.Concrete.EntityFramework
         }
 
         public DbSet<Article> Articles { get; set; }
+        public DbSet<ArticleType> ArticleTypes { get; set; }
     }
 }
