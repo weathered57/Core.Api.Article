@@ -24,36 +24,75 @@ namespace Core.Api.Service.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var articles = _articleService.GetAll();
-            return Ok(articles);
+            try
+            {
+                var articles = _articleService.GetAll();
+                return Ok(articles);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         // GET api/articles/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            var article = _articleService.Get(id);
-            return Ok(article);
+            try
+            {
+                var article = _articleService.Get(id);
+                return Ok(article);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         // POST api/articles
         [HttpPost]
         public IActionResult Post(Article article)
         {
-             _articleService.Add(article);
-            return new StatusCodeResult(201);
+            try
+            {
+                _articleService.Add(article);
+                return new StatusCodeResult(201);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         // PUT api/articles/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public IActionResult Put(Article article)
         {
+            try
+            {
+                _articleService.Update(article);
+                return Ok(article);
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
 
         // DELETE api/articles/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                _articleService.Delete(id);
+                return Ok();
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
         }
     }
 }
