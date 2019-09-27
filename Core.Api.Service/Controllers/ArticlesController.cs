@@ -94,5 +94,54 @@ namespace Core.Api.Service.Controllers
                 return BadRequest();
             }
         }
+
+        // GET api/GetAllDetail
+        [HttpGet("GetAllDetail")]
+        public IActionResult GetAllDetail()
+        {
+            try
+            {
+                var article = _articleService.GetAllDetail();
+
+                if (article == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(article);
+                }
+
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+        // GET api/GetDetail/1
+        [HttpGet("GetDetail/{id}")]
+        public IActionResult GetDetail(int id)
+        {
+            try
+            {
+                var article = _articleService.GetDetail(id);
+
+                if (article == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(article);
+                }
+
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
     }
 }

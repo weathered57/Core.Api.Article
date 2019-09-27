@@ -11,7 +11,7 @@ namespace Core.Api.Entities.Concrete
         [Key]
         public int ArticleId { get; set; }
         public string ArticleName { get; set; }
-        public string ArticleType { get; set; }
+        public int ArticleTypeId { get; set; }
         public string ArticleSummary { get; set; }
         public DateTime ArticleAddedDate { get; set; }
     }

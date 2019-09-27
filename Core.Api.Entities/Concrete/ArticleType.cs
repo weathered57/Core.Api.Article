@@ -8,6 +8,6 @@ namespace Core.Api.Entities.Concrete
    public class ArticleType : IEntity
     {
         public int ArticleTypeId { get; set; }
-        public int ArticleTypeName { get; set; }
+        public string ArticleTypeName { get; set; }
     }
 }
