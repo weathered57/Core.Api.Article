@@ -1,1 +1,2 @@
 # Core.Api.Article
+deneme
