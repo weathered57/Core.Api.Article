@@ -30,8 +30,18 @@ namespace Core.Api.Service.Controllers
         {
             try
             {
-                var articles = _articleService.GetAll();
-                return Ok(articles);
+                var articles = _articleService.GetAllDetail();
+                var articleToReturn = _mapper.Map<List<ArticleModelDTO>>(articles);
+
+                if (articleToReturn == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(articleToReturn);
+                }
+
             }
             catch (Exception)
             {
@@ -45,8 +55,18 @@ namespace Core.Api.Service.Controllers
         {
             try
             {
-                var article = _articleService.Get(id);
-                return Ok(article);
+                var article = _articleService.GetDetail(id);
+                var articleToReturn = _mapper.Map<ArticleModelDTO>(article);
+
+                if (articleToReturn == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(articleToReturn);
+                }
+
             }
             catch (Exception)
             {
@@ -99,55 +119,6 @@ namespace Core.Api.Service.Controllers
             }
         }
 
-        // GET api/GetAllDetail
-        [HttpGet("GetAllDetail")]
-        public IActionResult GetAllDetail()
-        {
-            try
-            {
-                var articles = _articleService.GetAllDetail();
-                var articleToReturn = _mapper.Map<List<ArticleModelDTO>>(articles);
-
-                if (articleToReturn == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    return Ok(articleToReturn);
-                }
-
-            }
-            catch (Exception)
-            {
-                return BadRequest();
-            }
-        }
-
-        // GET api/GetDetail/1
-        [HttpGet("GetDetail/{id}")]
-        public IActionResult GetDetail(int id)
-        {
-            try
-            {
-                var article = _articleService.GetDetail(id);
-                var articleToReturn=_mapper.Map<ArticleModelDTO>(article);
-
-                if (articleToReturn == null)
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    return Ok(articleToReturn);
-                }
-
-            }
-            catch (Exception)
-            {
-                return BadRequest();
-            }
-        }
-
+    
     }
 }
