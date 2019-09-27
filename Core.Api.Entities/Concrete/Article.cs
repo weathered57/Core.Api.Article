@@ -14,5 +14,6 @@ namespace Core.Api.Entities.Concrete
         public int ArticleTypeId { get; set; }
         public string ArticleSummary { get; set; }
         public DateTime ArticleAddedDate { get; set; }
+        public ArticleType ArticleType { get; set; }
     }
 }

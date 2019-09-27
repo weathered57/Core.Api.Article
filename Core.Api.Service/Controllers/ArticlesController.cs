@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Core.Api.Business.Abstract;
 using Core.Api.Entities.Concrete;
+using Core.Api.Entities.ContextTypes;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,11 +16,13 @@ namespace Core.Api.Service.Controllers
     public class ArticlesController : ControllerBase
     {
         IArticleService _articleService;
+        IMapper _mapper;
 
-        public ArticlesController(IArticleService articleService)
+        public ArticlesController(IArticleService articleService, IMapper mapper)
         {
             _articleService = articleService;
-        }
+            _mapper = mapper;
+    }
 
         // GET api/articles
         [HttpGet]
@@ -101,15 +105,16 @@ namespace Core.Api.Service.Controllers
         {
             try
             {
-                var article = _articleService.GetAllDetail();
+                var articles = _articleService.GetAllDetail();
+                var articleToReturn = _mapper.Map<List<ArticleModelDTO>>(articles);
 
-                if (article == null)
+                if (articleToReturn == null)
                 {
                     return NotFound();
                 }
                 else
                 {
-                    return Ok(article);
+                    return Ok(articleToReturn);
                 }
 
             }
@@ -126,14 +131,15 @@ namespace Core.Api.Service.Controllers
             try
             {
                 var article = _articleService.GetDetail(id);
+                var articleToReturn=_mapper.Map<ArticleModelDTO>(article);
 
-                if (article == null)
+                if (articleToReturn == null)
                 {
                     return NotFound();
                 }
                 else
                 {
-                    return Ok(article);
+                    return Ok(articleToReturn);
                 }
 
             }

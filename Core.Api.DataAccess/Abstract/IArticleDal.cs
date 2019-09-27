@@ -8,7 +8,7 @@ namespace Core.Api.DataAccess.Abstract
 {
     public interface IArticleDal : IEntityRepositoy<Article>
     {
-        List<ArticleModelDTO> GetArticleDetailList();
-        ArticleModelDTO GetArticleDetail(int articleId);
+        List<Article> GetArticleDetailList();
+        Article GetArticleDetail(int articleId);
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Core.Api.Business.Abstract;
 using Core.Api.Business.Concrete;
 using Core.Api.DataAccess.Abstract;
@@ -30,6 +31,7 @@ namespace Core.Api.Service
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IArticleDal, EfArticleDal>();
             services.AddScoped<IArticleService, ArticleManager>();
 

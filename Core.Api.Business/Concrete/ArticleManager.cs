@@ -42,12 +42,12 @@ namespace Core.Api.Business.Concrete
             _articleDal.Update(product);
         }
 
-        public List<ArticleModelDTO> GetAllDetail()
+        public List<Article> GetAllDetail()
         {
             return _articleDal.GetArticleDetailList();
         }
 
-        public ArticleModelDTO GetDetail(int articleId)
+        public Article GetDetail(int articleId)
         {
             return _articleDal.GetArticleDetail(articleId);
         }

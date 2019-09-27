@@ -13,7 +13,7 @@ namespace Core.Api.Business.Abstract
         void Add(Article product);
         void Update(Article product);
         void Delete(int articleId);
-        List<ArticleModelDTO> GetAllDetail();
-        ArticleModelDTO GetDetail(int articleId);
+        List<Article> GetAllDetail();
+        Article GetDetail(int articleId);
     }
 }
