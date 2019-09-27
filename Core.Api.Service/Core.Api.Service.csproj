@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core.Api.Business\Core.Api.Business.csproj" />
-    <ProjectReference Include="..\Core.Api.DataAccess\Core.Api.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>
