@@ -74,6 +74,31 @@ namespace Core.Api.Service.Controllers
             }
         }
 
+        // GET api/articles/search/test
+        [HttpGet("search/{key}")]
+        public IActionResult Search(string key)
+        {
+            try
+            {
+                var articles = _articleService.GetAllDetail().Where(x=>x.ArticleName.ToLower() ==  key.ToLower());
+                var articleToReturn = _mapper.Map<List<ArticleModelDTO>>(articles);
+
+                if (articleToReturn == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    return Ok(articleToReturn);
+                }
+
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
         // POST api/articles
         [HttpPost]
         public IActionResult Post(Article article)
