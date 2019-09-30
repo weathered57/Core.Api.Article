@@ -74,13 +74,14 @@ namespace Core.Api.Service.Controllers
             }
         }
 
+        //Articlename'e göre arama
         // GET api/articles/search/test
         [HttpGet("search/{key}")]
         public IActionResult Search(string key)
         {
             try
             {
-                var articles = _articleService.GetAllDetail().Where(x=>x.ArticleName.ToLower() ==  key.ToLower());
+                var articles = _articleService.GetAllDetail().Where(x=>x.ArticleName.ToLower().Contains(key.ToLower()));
                 var articleToReturn = _mapper.Map<List<ArticleModelDTO>>(articles);
 
                 if (articleToReturn == null)
