@@ -13,3 +13,7 @@
 4-) Yaklaşık olarak 1.5 yıllık bir tecrübem var ve yolun daha başındayım. Bilgisayar Mühendisliğini isteyerek seçtim ve işimi severek yapıyorum. Bu yüzden kendimi geliştirebileceğim ve o yere bir şeyler katabileceğim bir ortam da çalışmak istiyorum.
 
 5-) Canlı veritabanı kullandığımdan dolayı projeyi indirip açtıktan sonra direk olarak postman üzerinden testleri yapabilirsiniz.
+
+makale listeleme => http://anilcanozdogru.xyz/api/articles
+makale getirme => http://anilcanozdogru.xyz/api/articles/1
+makale arama => http://anilcanozdogru.xyz/api/articles/search/core
