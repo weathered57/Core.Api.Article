@@ -14,7 +14,7 @@
 
 5-) Canlı veritabanı kullandığımdan dolayı projeyi indirip açtıktan sonra direk olarak postman üzerinden testleri yapabilirsiniz.
 
-6-Projeyi publish ettim aşağıdaki linklerden deneyebilirsiniz.
+6-) Projeyi publish ettim aşağıdaki linklerden deneyebilirsiniz.
 makale listeleme => http://anilcanozdogru.xyz/api/articles
 makale getirme => http://anilcanozdogru.xyz/api/articles/1
 makale arama => http://anilcanozdogru.xyz/api/articles/search/core
